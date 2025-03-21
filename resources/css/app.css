@@ -1,0 +1,31 @@
+:root{
+    ---purpleColor: #231738;
+    ---blueColor: #9ED7F5;
+    ---whiteColor: #FDFDFF;
+    ---pinkColor: #F57B88;
+}
+
+
+html{
+    scroll-snap-type: y proximity;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.majima{
+    background-color: var(---purpleColor);
+    color: var(---whiteColor);
+    width: 768px;
+    height: 1500px;
+}
+
+.kiryu{
+    background-color: var(---blueColor);
+    width: 768px;
+    height: 1500px;
+}
