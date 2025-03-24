@@ -11,14 +11,13 @@
 
     <div id="app">
         @yield('content')
-        @yield('sandulo')
         <div class="majima">
             majima
         </div>
         <div class="kiryu">
             kiryu
         </div>
-        @yield('footerV')
+        @yield('piepagina')
     </div>
 
 </body>
