@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('content')
-<pepe></pepe>
+<navbar></navbar>
 @endsection
 
 @section('piepagina')
