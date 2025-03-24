@@ -8,3 +8,7 @@
 holiiii
 adios
 @endsection
+
+@section('footerV')
+<footerV></footerV>
+@endsection
