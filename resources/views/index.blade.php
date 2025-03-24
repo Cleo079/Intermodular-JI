@@ -12,13 +12,14 @@
     <div id="app">
         @yield('content')
         @yield('sandulo')
+        <div class="majima">
+            majima
+        </div>
+        <div class="kiryu">
+            kiryu
+        </div>
+        @yield('footerV')
     </div>
 
-    <div class="majima">
-        majima
-    </div>
-    <div class="kiryu">
-        kiryu
-    </div>
 </body>
 </html>
