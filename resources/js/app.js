@@ -4,11 +4,11 @@ import * as bootstrap from 'bootstrap';
 
 import { createApp } from 'vue';
 
-import pepeVue from './components/Pepe.vue';
+import navBarVue from './components/NavBar.vue';
 import FooterVue from './components/footerV.vue';
 
 const app = createApp({});
-app.component('pepe', pepeVue);
+app.component('navbar', navBarVue);
 app.component('pie', FooterVue);
 app.mount('#app');
 
