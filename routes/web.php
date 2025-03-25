@@ -21,6 +21,6 @@ Route::get('/registro', function () {
     return view('registro');
 });
 
-Route::get('/formulario', function () {
-    return view('formulario');
+Route::get('/iniciar', function () {
+    return view('iniciar');
 });

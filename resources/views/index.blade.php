@@ -12,10 +12,10 @@
     <div id="app">
         @yield('content')
         <div class="majima">
-            majima
+            <a href="{{ url('registro') }}" class="btn btn-secondary">Registro</a>
         </div>
         <div class="kiryu">
-            kiryu
+            <a href="{{ url('formulario') }}" class="btn btn-secondary">Iniciar Sesión</a>
         </div>
         @yield('piepagina')
     </div>
