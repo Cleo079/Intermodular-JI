@@ -34,7 +34,7 @@
             <!-- Botones -->
             <div class="d-flex justify-content-between">
                 <button type="submit" class="btn btn-primary">Registrarse</button>
-                <a href="{{ route('formulario') }}" class="btn btn-secondary">Iniciar Sesión</a>
+                <a href="{{ url('formulario') }}" class="btn btn-secondary">Iniciar Sesión</a>
 
 
             </div>
