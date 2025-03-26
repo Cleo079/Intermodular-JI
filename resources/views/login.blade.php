@@ -1,10 +1,8 @@
-@extends('formulario')
+@extends('layouts.principal')
 
-@section('NavBar')
-<navbar></navbar>
-@endsection
+@section('titulo', 'Login')
 
-@section('inicio')
+@section('contenido')
 <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4 shadow-lg" style="width: 350px;">
         <h3 class="text-center mb-4">Registrarse</h3>
@@ -33,6 +31,3 @@
 </div>
 @endsection
 
-@section('piepagina')
-<pie></pie>
-@endsection

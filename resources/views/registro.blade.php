@@ -1,10 +1,7 @@
 @extends('layouts.principal')
+@section('titulo', 'Registro')
 
-@section('NavBar')
-<navbar></navbar>
-@endsection
-
-@section('registro')
+@section('contenido')
 <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4 shadow-lg" style="width: 350px;">
         <h3 class="text-center mb-4">Registrarse</h3>
@@ -33,6 +30,3 @@
 </div>
 @endsection
 
-@section('piepagina')
-<pie></pie>
-@endsection
