@@ -4,6 +4,8 @@
     ---whiteColor: #FDFDFF;
     ---pinkColor: #F57B88;
     ---blackColor: #181818;
+    ---baby1: url('../img/tiger.jpg');
+    ---baby2: url('../img/IS-2.jpg');
 }
 
 
@@ -23,8 +25,11 @@ body {
 }
 
 #registro{
+    background: var(---baby1) no-repeat center/cover;
+    width: 950px;
 }
 
 #login{
-
+    background: var(---baby2) no-repeat center/cover;
+    width: 950px;
 }
