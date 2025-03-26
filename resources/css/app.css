@@ -3,60 +3,28 @@
     ---blueColor: #9ED7F5;
     ---whiteColor: #FDFDFF;
     ---pinkColor: #F57B88;
+    ---blackColor: #181818;
 }
 
-
-/* html{
-    scroll-snap-type: y proximity;
-}
-
-body{
-    display: flex;
-    flex-direction: column;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-}
-
-.majima{
-    background-color: var(---purpleColor);
-    color: var(---whiteColor);
-    width: 768px;
-    height: 1500px;
-}
-
-.kiryu{
-    background-color: var(---blueColor);
-    width: 768px;
-    height: 1500px;
-} */
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #1a1a1a;
-    color: white;
+    color: var(---blackColor);
 }
-section {
-    height: 100vh;
+
+#contenedor{
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 2rem;
-    text-align: center;
-    padding: 20px;
 }
-.hero {
-    background: url('../img/banner.jfif') no-repeat center center/cover;
-    position: relative;
+
+#registro{
 }
-.hero h1 {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-}
-.info, .guests, .tickets {
-    opacity: 0;
-    transform: translateY(50px);
+
+#login{
+
 }

@@ -3,28 +3,67 @@
 @section('titulo', 'Landing')
 
 @section('contenido')
-<section class="hero">
-    <h1>Bienvenido al Salón del Manga 2025</h1>
-    <p>El evento más grande de cultura japonesa, anime y videojuegos.</p>
-</section>
-<section class="info">
-    <h2>Información sobre el evento</h2>
-    <p>📅 Fecha: 15-17 de Agosto 2025</p>
-    <p>📍 Lugar: Centro de Convenciones de Madrid</p>
-    <p>🎭 Actividades: Concursos de cosplay, torneos de videojuegos, conferencias y más.</p>
-</section>
-<section class="guests">
-    <h2>Invitados Especiales</h2>
-    <p>🎤 Akira Yamaoka - Compositor de Silent Hill</p>
-    <p>🖌️ Yoshitaka Amano - Ilustrador de Final Fantasy</p>
-    <p>💥 Yaya Han - Famosa cosplayer internacional</p>
-</section>
-<section class="tickets">
-    <h2>Compra tus Entradas</h2>
-    <p>🎟️ Entrada General: 20€</p>
-    <p>👾 Pase VIP: 50€ (Acceso preferente + Meet & Greet)</p>
-    <p>🔗 <a href="#" style="color: yellow; text-decoration: none;">Compra ahora</a></p>
-</section>
+<div id="contenedor">
+    <div id="registro">
+        <div>
+            <div class="d-flex justify-content-center align-items-center vh-100">
+                <div class="card p-4 shadow-lg" style="width: 350px;">
+                    <h3 class="text-center mb-4">Register</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Introduce tu nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" placeholder="Introduce tu contraseña">
+                        </div>
+                        <div class="mb-3">
+                            <label for="tipoUsuario" class="form-label">Tipo de usuario</label>
+                            <select class="form-select" id="tipoUsuario">
+                                <option value="espectador">Espectador</option>
+                                <option value="feriante">Feriante</option>
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Registrarse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="login">
+        <div>
+            <div class="d-flex justify-content-center align-items-center vh-100">
+                <div class="card p-4 shadow-lg" style="width: 350px;">
+                    <h3 class="text-center mb-4">Login</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Introduce tu nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" placeholder="Introduce tu contraseña">
+                        </div>
+                        <div class="mb-3">
+                            <label for="tipoUsuario" class="form-label">Tipo de usuario</label>
+                            <select class="form-select" id="tipoUsuario">
+                                <option value="espectador">Espectador</option>
+                                <option value="feriante">Feriante</option>
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @endsection
 
