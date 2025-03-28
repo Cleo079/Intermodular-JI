@@ -24,19 +24,21 @@ class usuarioController extends Controller
      */
     public function store(Request $request)
     {
+       
+
         try {
            $usuario = new Usuario();
 
-           $usuario-> nombre = $request->input('Nombre');
-           $usuario-> Email = $request->input('Email');
-           $usuario-> contraseña = $request->input('Contrasenya');
-           $usuario-> Tipo_usuario = $request->input('Tipo');
-
-
+           $usuario-> NOMBRE = $request->input('Nombre');
+           $usuario-> EMAIL = $request->input('Email');
+           $usuario-> CONTRASEÑA = bcrypt($request->input('Contrasenya'));
+           $usuario-> TIPO_USUARIO = $request->input('Tipo');
            $usuario-> save();
 
+           return response()->json(['message' => 'Usuario registrado correctamente'], 201);
+
         } catch (\Throwable $th) {
-            //throw $th;
+            return response()->json(['error' => 'Error al registrar usuario'], 500);
         }
     }
 
