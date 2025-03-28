@@ -7,6 +7,10 @@ import { createApp } from 'vue';
 import navBarVue from './components/NavBar.vue';
 import FooterVue from './components/footerV.vue';
 import Registrarse from './components/Registrarse.vue';
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger"; 
+
+gsap.registerPlugin(ScrollTrigger);
 
 const app = createApp({});
 app.component('navbar', navBarVue);
