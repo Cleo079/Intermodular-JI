@@ -28,7 +28,14 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $evento = new Evento();
+        $evento-> nombre = $request->input('nombre');
+        $evento-> descripcion = $request->input('descripcion');
+        $evento-> fecha = $request->input('fecha');
+        $evento-> hora = $request->input('hora');
+        $evento-> lugar = $request->input('lugar');
+        $evento-> aforo = $request->input('aforo');
+        $evento-> ubicacion = $request->input('ubicacion');
     }
 
     /**
