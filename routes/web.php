@@ -24,3 +24,7 @@ Route::get('/registro', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('/feria', function () {
+    return view('feria');
+});
