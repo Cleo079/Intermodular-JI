@@ -11,7 +11,6 @@ class Evento extends Model
 
     protected $table = 'evento';
     protected $primaryKey = 'ID_EVENTO';
-    public $incrementing = false;
     public $timestamps = false;
 
     // Relación M:N con Entrada

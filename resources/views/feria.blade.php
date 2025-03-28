@@ -24,8 +24,20 @@
                     <label for="tiempo" class="form-label">Horario</label>
                     <input type="time" id="tiempo" class="form-control">
                 </div>
+                <div class="mb-3">
+                    <label for="lugart" class="form-label">Lugar</label>
+                    <input type="text" id="lugart" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="aforo" class="form-label">Aforo</label>
+                    <input type="number" id="aforo" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="ubicacion" class="form-label">Ubicacion</label>
+                    <input type="text" id="ubicacion" class="form-control">
+                </div>
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                    <button type="submit" class="btn btn-primary">Crear</button>
                 </div>
             </form>
         </div>
