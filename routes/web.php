@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +29,5 @@ Route::get('/login', function () {
 Route::get('/feria', function () {
     return view('feria');
 });
+
+Route::resource('usuario', UsuarioController::class);
