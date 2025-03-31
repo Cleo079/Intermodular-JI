@@ -15,7 +15,7 @@
     </thead>
     <tbody>
         @foreach ($estands as $estand)
-        <tr>
+        <tr class="table-info">
             <td>{{ $estand->NOMBRE_EMPRESA }}</td>
             <td>{{ $estand->CONTACTO }}</td>
             <td>{{ $estand->EMAIL }}</td>

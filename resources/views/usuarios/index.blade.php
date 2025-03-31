@@ -13,7 +13,11 @@
     </thead>
     <tbody>
         @foreach ($usuarios as $usuario)
-        <tr>
+        <tr class="{{
+            $usuario->TIPO_USUARIO == 'organizador' ? 'table-danger' : (
+            $usuario->TIPO_USUARIO == 'feriante' ? 'table-warning' : (
+            $usuario->TIPO_USUARIO == 'expositor' ? 'table-info' : (
+            $usuario->TIPO_USUARIO == 'visitante' ? 'table-success' : 'table-light'))) }}">
             <td>{{ $usuario->NOMBRE }}</td>
             <td>{{ $usuario->EMAIL }}</td>
             <td>{{ $usuario->CONTRASEÑA }}</td>
