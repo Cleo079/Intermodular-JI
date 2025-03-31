@@ -5,7 +5,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">Nombre</th>
+            <th scope="col">Nombre_Empresa</th>
             <th scope="col">Contacto</th>
             <th scope="col">Email</th>
             <th scope="col">Telefono</th>
@@ -16,7 +16,7 @@
     <tbody>
         @foreach ($estands as $estand)
         <tr>
-            <td>{{ $estand->NOMBRE }}</td>
+            <td>{{ $estand->NOMBRE_EMPRESA }}</td>
             <td>{{ $estand->CONTACTO }}</td>
             <td>{{ $estand->EMAIL }}</td>
             <td>{{ $estand->TELEFONO }}</td>
