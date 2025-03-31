@@ -12,7 +12,9 @@ class EventoController extends Evento
      */
     public function index()
     {
-        //
+        $eventos = Evento::all();
+
+       return view('eventos.index', compact('eventos'));
     }
 
     /**
@@ -57,16 +59,16 @@ class EventoController extends Evento
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Evento $evento)
-    {
-        //
-    }
+    // public function update(Request $request, Evento $evento)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Evento $evento)
-    {
-        //
-    }
+    // public function destroy(Evento $evento)
+    // {
+    //     //
+    // }
 }
