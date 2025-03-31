@@ -2,7 +2,11 @@
 @section('titulo', 'Registro')
 
 @section('contenido')
-<div class="d-flex justify-content-center align-items-center vh-100">
+<div id="app">
+    <registro></registro>
+
+</div>
+{{-- <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4 shadow-lg" style="width: 350px;">
         <h3 class="text-center mb-4">Registrarse</h3>
         <form>
@@ -27,6 +31,6 @@
             </div>
         </form>
     </div>
-</div>
+</div> --}}
 @endsection
 
