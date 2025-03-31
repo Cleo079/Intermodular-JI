@@ -22,7 +22,7 @@
                     <div class="mb-3">
                         <label for="tipoUsuario" class="form-label">Tipo de usuario</label>
                         <select class="form-select" id="tipoUsuario" v-model="usuario.Tipo">
-                            <option value="espectador">Espectador</option>
+                            <option value="espectador">Visitante</option>
                             <option value="feriante">Feriante</option>
                         </select>
                     </div>
@@ -50,7 +50,7 @@ export default {
                 Nombre: '',
                 Email: '',
                 Contrasenya: '',
-                Tipo: 'espectador'
+                Tipo: ''
             },
             mensaje: '',
             error: ''
@@ -63,7 +63,7 @@ export default {
             try {
                 const response = await axios.post('http://localhost/Intermodular-JI/public/api/usuario', this.usuario);
                 this.mensaje = response.data.message;
-                this.usuario = { Nombre: '', Email: '', Contrasenya: '', Tipo: 'espectador' };
+                this.usuario = { Nombre: '', Email: '', Contrasenya: '', Tipo: 'visitante' };
             } catch (error) {
                 this.error = error.response?.data?.error || 'Error al registrar usuario';
             }
