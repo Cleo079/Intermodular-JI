@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\EventoController;
+use App\Http\Controllers\EstandController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +28,10 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/feria', function () {
+Route::get('/feriaregister', function () {
     return view('feria');
 });
 
 Route::resource('usuario', UsuarioController::class);
+Route::resource('evento', EventoController::class);
+Route::resource('estand', EstandController::class);

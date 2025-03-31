@@ -12,7 +12,9 @@ class EstandController extends Controller
      */
     public function index()
     {
-        //
+        $estands = Estand::all();
+
+       return view('estands.index', compact('estands'));
     }
 
     /**
