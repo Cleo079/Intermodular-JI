@@ -23,6 +23,9 @@ Route::get('/', function () {
 Route::get('/registro', function () {
     return view('registro');
 });
+Route::get('/usuario', function () {
+    return view('usuarios.index');
+});
 
 Route::get('/login', function () {
     return view('login');
