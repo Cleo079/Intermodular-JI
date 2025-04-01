@@ -22,7 +22,9 @@
                     <div class="mb-3">
                         <label for="tipoUsuario" class="form-label">Tipo de usuario</label>
                         <select class="form-select" id="tipoUsuario" v-model="usuario.Tipo">
-                            <option value="espectador">Visitante</option>
+                            <option value="organizador">Organizador</option>
+                            <option value="expositor">Expositor</option>
+                            <option value="visitante">Visitante</option>
                             <option value="feriante">Feriante</option>
                         </select>
                     </div>
@@ -30,9 +32,8 @@
                     <div class="text-danger" v-if="error">{{ error }}</div>
                     <div class="text-success" v-if="mensaje">{{ mensaje }}</div>
 
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary">Registrarse</button>
-                        <a href="{{ url('formulario') }}" class="btn btn-secondary">Iniciar Sesión</a>
                     </div>
                 </form>
             </div>

@@ -13,5 +13,14 @@
         @yield('contenido')
         <pie></pie>
     </div>
+    <script>
+        window.routes = {
+
+            usuarios: "{{ route('usuario.index') }}",
+            eventos: "{{ route('evento.index') }}",
+            estands: "{{ route('estand.index') }}"
+
+        };
+    </script>
 </body>
 </html>
