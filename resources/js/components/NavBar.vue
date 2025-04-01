@@ -2,7 +2,7 @@
     <div>
         <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" :href="landingUrl"><img src="../../img/logo_prueba_2.jfif" alt="" width="80rem"></a>
+            <a class="navbar-brand" :href="landingUrl"><img :src="assets.ironCross" alt="" width="80rem"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,7 +40,8 @@
 export default {
     data() {
         return {
-            routes: window.routes // Accede a las rutas definidas en Blade
+            routes: window.routes,
+            assets: window.assets // Accede a las rutas definidas en Blade
         };
     },
   computed: {
