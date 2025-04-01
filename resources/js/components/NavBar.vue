@@ -41,7 +41,7 @@ export default {
     data() {
         return {
             routes: window.routes,
-            assets: window.assets // Accede a las rutas definidas en Blade
+            assets: window.assets
         };
     },
   computed: {
