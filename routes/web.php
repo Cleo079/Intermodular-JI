@@ -38,3 +38,4 @@ Route::get('/feriaregister', function () {
 Route::resource('usuario', UsuarioController::class);
 Route::resource('evento', EventoController::class);
 Route::resource('estand', EstandController::class);
+Route::post('/login', [UsuarioController::class, 'login'])->name('iniciar');

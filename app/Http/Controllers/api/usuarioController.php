@@ -1,68 +1,108 @@
 <?php
 
-namespace App\Http\Controllers\api;
+namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\UsuarioResource;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Resources\UsuarioResource;
 
-class usuarioController extends Controller
+class UsuarioController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra una lista de usuarios.
      */
     public function index()
     {
-        $usuario = usuario::all();
-
-        return  UsuarioResource::collection($usuario);
+        $usuarios = Usuario::all();
+        return UsuarioResource::collection($usuarios);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena un nuevo usuario en la base de datos.
      */
     public function store(Request $request)
     {
-       
-
         try {
-           $usuario = new Usuario();
 
-           $usuario-> NOMBRE = $request->input('Nombre');
-           $usuario-> EMAIL = $request->input('Email');
-           $usuario-> CONTRASEÑA = bcrypt($request->input('Contrasenya'));
-           $usuario-> TIPO_USUARIO = $request->input('Tipo');
-           $usuario-> save();
+            $usuario=new Usuario();
 
-           return response()->json(['message' => 'Usuario registrado correctamente'], 201);
+            $usuario->NOMBRE = $request->input('Nombre');
+            $usuario->EMAIL = $request->input('Email');
+            $usuario->CONTRASEÑA = bcrypt($request->input('Contrasenya'));
+            $usuario->TIPO_USUARIO = $request->input('Tipo');
+            $usuario->save();
 
+            return response()->json(['message' => 'Usuario registrado correctamente'], 201);
         } catch (\Throwable $th) {
             return response()->json(['error' => 'Error al registrar usuario'], 500);
         }
     }
 
     /**
-     * Display the specified resource.
+     * Muestra un usuario específico.
      */
     public function show(Usuario $usuario)
     {
-        //
+        return new UsuarioResource($usuario);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza los datos de un usuario.
      */
     public function update(Request $request, Usuario $usuario)
     {
-        //
+        try {
+            $usuario->update($request->all());
+            return response()->json(['message' => 'Usuario actualizado correctamente']);
+        } catch (\Throwable $th) {
+            return response()->json(['error' => 'Error al actualizar usuario'], 500);
+        }
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Elimina un usuario.
      */
     public function destroy(Usuario $usuario)
     {
-        //
+        try {
+            $usuario->delete();
+            return response()->json(['message' => 'Usuario eliminado correctamente']);
+        } catch (\Throwable $th) {
+            return response()->json(['error' => 'Error al eliminar usuario'], 500);
+        }
+    }
+
+    /**
+     * Inicia sesión un usuario.
+     */
+    public function login(Request $request)
+{
+    $usuario = Usuario::where('EMAIL', $request->input('email'))->first();
+
+    if ($usuario && Hash::check($request->input('contrasenya'), $usuario->CONTRASEÑA)) {
+        Auth::login($usuario);
+
+        return response()->json([
+            'message' => 'Login exitoso',
+            'usuario' => $usuario
+        ], 200);
+    }
+
+    return response()->json([
+        'error' => 'Usuario o contraseña incorrectos'
+    ], 401);
+}
+
+
+    /**
+     * Cierra sesión.
+     */
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 }
