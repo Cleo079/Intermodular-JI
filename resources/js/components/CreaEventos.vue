@@ -36,7 +36,10 @@
 
                     <div class="mb-3">
                         <label for="estado" class="form-label">Estado</label>
-                        <input type="text" class="form-control" id="estado" v-model="evento.Estado">
+                        <select class="form-select" id="estado" v-model="evento.Estado">
+                            <option value="activa">Activa</option>
+                            <option value="inactiva">Inactiva</option>
+                        </select>
                     </div>
 
                     <div class="mb-3">
