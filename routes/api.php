@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\api\usuarioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+//use App\Http\Controllers\api\eventoController;
+use App\Http\Controllers\api\usuarioController;
 
 
 /*
@@ -21,9 +22,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('usuario',usuarioController::class);
+
 Route::post('usuario/login', [usuarioController::class, 'login']);
 
 
 
 
+
+
+
+//Route::apiResource('evento', eventoController::class);
 

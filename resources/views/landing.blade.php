@@ -12,6 +12,9 @@
             <login></login>
         </div>
     </div>
+    <div>
+        <cevento></cevento>
+    </div>
 </div>
 
 
