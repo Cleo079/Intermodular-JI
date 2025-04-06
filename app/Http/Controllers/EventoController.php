@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Evento;
 use Illuminate\Http\Request;
 
+
 class EventoController extends Evento
 {
     /**
@@ -48,6 +49,41 @@ class EventoController extends Evento
     {
         //
     }
+
+
+
+    public function crear(){
+        return view('formEventos');
+    }
+
+    public function guardar(Request $request){
+
+        if (auth()->user()->rol !== 'feriante') {
+            abort(403, 'No tienes permiso para crear eventos.');
+        }
+
+        $evento = new Evento();
+        $evento->NOMBRE = $request->nombre;
+        $evento->DESCRIPCION = $request->descripcion;
+        $evento->FECHA = $request->fecha;
+        $evento->HORA = $request->hora;
+        $evento->LUGAR = $request->lugar;
+        $evento->AFORO = $request->aforo;
+        $evento->ESTADO = $request->estado;
+        $evento->UBICACION = $request->ubicacion;
+        $evento->ID_ORGANIZADOR = auth()->user()->id;
+        $evento->save();
+
+        return redirect()->route('eventos.crear')->with('success', 'Evento creado correctamente');
+
+    }
+
+    public function form()
+    {
+        // Retorna la vista formEventos.blade.php
+        return view('formEventos');
+    }
+}
 
     /**
      * Update the specified resource in storage.
