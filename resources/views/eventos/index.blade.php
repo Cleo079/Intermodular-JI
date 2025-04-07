@@ -19,8 +19,8 @@
     <tbody>
         @foreach ($eventos as $evento)
         <tr class="{{
-            $evento->Estado == 'activa' ? 'table-danger' : (
-            $evento->Estado == 'inactiva' ? 'table-success' : 'table-light') }}">
+            $evento->ESTADO == 'inactiva' ? 'table-danger' : (
+            $evento->ESTADO == 'activa' ? 'table-success' : 'table-light') }}">
             <td>{{ $evento->NOMBRE }}</td>
             <td>{{ $evento->DESCRIPCION }}</td>
             <td>{{ $evento->FECHA }}</td>
@@ -35,3 +35,27 @@
     </tbody>
 </table>
 @endsection
+
+<script>
+    //asegura que <table> ya existe en cuianto empieze a buscarlo
+    document.addEventListener("DOMContentLoaded", () => {
+        //busca todas las <tr> del <tbody> de la <table>
+        const filas = document.querySelectorAll("table tbody tr");
+        //recorre el indice de cada <tr>
+        filas.forEach((fila, index) => {
+            //dentro de cada <tr> se seleccionan todas las <td> con los datos
+            const columnas = fila.querySelectorAll("td");
+            //creamos un array vacio
+            let datos = [];
+            //recorremos cada 'col' obteniendo su '.textContent',
+            // usando '.push' añadimos el nuevo elemento al array 'datos'
+            //con '.trim' quitamos los espacios al inicio y final
+            //y finalmente guardamos en el arreglo 'datos'
+            columnas.forEach(col => {
+                datos.push(col.textContent.trim());
+            });
+            //mostramos cada 'evento' por 'fila'
+            console.log(`Evento ${index + 1}:`, datos);
+        });
+    });
+</script>

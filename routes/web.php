@@ -42,6 +42,7 @@ Route::get('/feriaregister', function () {
 
 
 
+
 Route::post('/logout', function () {
     Auth::logout();
     return redirect('/login');
@@ -52,6 +53,16 @@ Route::post('/logout', function () {
 
 
 Route::post('/login', [UsuarioController::class,'login'])->name('iniciar');
+
+// Route::middleware(['auth', 'EsFeriante'])->group(function() {
+//     Route::get('crear-evento', [EventoController::class, 'crear'])->name('eventos.crear');
+//     Route::post('guardar-evento', [EventoController::class, 'guardar'])->name('eventos.guardar');
+// });
+
+
+
+// Route::get('formEvento', [EventoController::class, 'form'])->name('evento.form');
+
 Route::resource('usuario', UsuarioController::class);
 Route::resource('evento', EventoController::class);
 Route::resource('estand', EstandController::class);
