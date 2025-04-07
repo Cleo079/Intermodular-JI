@@ -19,7 +19,7 @@
 
             usuarios: "{{ route('usuario.index') }}",
             eventos: "{{ route('evento.index') }}",
-            estands: "{{ route('estand.index') }}"
+          
 
         };
         window.assets = {

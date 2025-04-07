@@ -7,6 +7,7 @@ use App\Http\Controllers\EstandController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\UsuarioController;
 use App\Models\EventoApp\Http\Middleware\EsFeriante;
+use Illuminate\Support\Facades\Auth;
 
 
 /*
@@ -33,11 +34,25 @@ Route::get('/usuario', function () {
 
 Route::get('/login', function () {
     return view('login');
-});
+})->name('showLogin');
 
 Route::get('/feriaregister', function () {
     return view('feria');
 });
+
+
+
+
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/login');
+})->name('logout');
+
+
+
+
+
+Route::post('/login', [UsuarioController::class,'login'])->name('iniciar');
 
 // Route::middleware(['auth', 'EsFeriante'])->group(function() {
 //     Route::get('crear-evento', [EventoController::class, 'crear'])->name('eventos.crear');
@@ -47,7 +62,8 @@ Route::get('/feriaregister', function () {
 
 
 // Route::get('formEvento', [EventoController::class, 'form'])->name('evento.form');
+
 Route::resource('usuario', UsuarioController::class);
 Route::resource('evento', EventoController::class);
 Route::resource('estand', EstandController::class);
-Route::post('/login', [UsuarioController::class, 'login'])->name('iniciar');
+

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
@@ -63,5 +65,22 @@ class UsuarioController extends Controller
     public function destroy(Usuario $usuario)
     {
         //
+    }
+
+    public function login(Request $request){
+        $username = $request->input('email');
+        $contrasenya = $request->input('password');
+
+        $user = Usuario::where('EMAIL', $username)->first();
+
+        if ($user != null && Hash::check($contrasenya, $user->CONTRASEÑA)) {
+            Auth::login($user);
+            $response = redirect('/');
+        } else {
+            // $request->session()->flash('error', 'Usuari o contrasenya incorrectes');
+            $response = redirect('/login')->withInput();
+        }
+
+        return $response;
     }
 }
