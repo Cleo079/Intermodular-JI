@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-//use App\Http\Controllers\api\eventoController;
+use App\Http\Controllers\api\eventoController;
 use App\Http\Controllers\api\usuarioController;
 
 
@@ -31,5 +31,5 @@ Route::post('usuario/login', [usuarioController::class, 'login']);
 
 
 
-//Route::apiResource('evento', eventoController::class);
+Route::apiResource('evento', eventoController::class);
 

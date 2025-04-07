@@ -33,20 +33,21 @@ Route::get('/usuario', function () {
 
 Route::get('/login', function () {
     return view('login');
-});
+})->name('showLogin');
 
 Route::get('/feriaregister', function () {
     return view('feria');
 });
 
-Route::middleware(['auth', 'EsFeriante'])->group(function() {
-    Route::get('crear-evento', [EventoController::class, 'crear'])->name('eventos.crear');
-    Route::post('guardar-evento', [EventoController::class, 'guardar'])->name('eventos.guardar');
-});
 
 
 
-Route::get('formEvento', [EventoController::class, 'form'])->name('evento.form');
+Route::get('/profile', function () {
+    //
+})->middleware('auth');
+
+
+
 Route::resource('usuario', UsuarioController::class);
 Route::resource('evento', EventoController::class);
 Route::resource('estand', EstandController::class);

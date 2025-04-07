@@ -30,7 +30,19 @@ class EstandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+            $estand = new Estand();
+            $estand->NOMBRE_EMPRESA = $request->input('NombreEmpresa');
+            $estand->EMAIL = $request->input('Email');
+            $estand->TELEFONO = $request->input('Telefono');
+            $estand->UBICACION = $request->input('Ubicacion');
+            $estand->ID_USUARIO = auth()->id(); // o pon un valor fijo si estás testeando
+            $estand->save();
+
+            return redirect()->back()->with('success', 'Estand creado correctamente');
+
+
     }
 
     /**
