@@ -19,8 +19,8 @@
     <tbody>
         @foreach ($eventos as $evento)
         <tr class="{{
-            $evento->Estado == 'activa' ? 'table-danger' : (
-            $evento->Estado == 'inactiva' ? 'table-success' : 'table-light') }}">
+            $evento->ESTADO == 'inactiva' ? 'table-danger' : (
+            $evento->ESTADO == 'activa' ? 'table-success' : 'table-light') }}">
             <td>{{ $evento->NOMBRE }}</td>
             <td>{{ $evento->DESCRIPCION }}</td>
             <td>{{ $evento->FECHA }}</td>
