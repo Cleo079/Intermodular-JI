@@ -38,7 +38,7 @@ class eventoController extends Controller
            $evento-> ESTADO = $request->input('Estado');
            $evento-> UBICACION = $request->input('Ubicacion');
            $evento-> ID_ORGANIZADOR = $request->input('Id_Organizador');
-           $evento-> save();;
+           $evento-> save();
 
            return response()->json(['message' => 'Evento creado correctamente'], 201);
 
