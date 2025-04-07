@@ -11,7 +11,7 @@ class Usuario extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    protected $table = 'usuario';
+    protected $table = 'USUARIO';
     protected $primaryKey = 'ID_USUARIO';
     public $timestamps = false;
 

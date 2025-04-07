@@ -7,7 +7,7 @@ import { createApp } from 'vue';
 import navBarVue from './components/NavBar.vue';
 import FooterVue from './components/footerV.vue';
 import Registrarse from './components/Registrarse.vue';
-import Login from './components/Login.vue';
+
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import CreaEventos from './components/CreaEventos.vue';
@@ -20,7 +20,7 @@ app.component('navbar', navBarVue);
 app.component('registro', Registrarse);
 app.component('cevento', CreaEventos);
 
-app.component('login', Login);
+
 app.component('pie', FooterVue);
 app.mount('#app');
 
