@@ -39,14 +39,14 @@ Route::get('/feriaregister', function () {
     return view('feria');
 });
 
-Route::middleware(['auth', 'EsFeriante'])->group(function() {
-    Route::get('crear-evento', [EventoController::class, 'crear'])->name('eventos.crear');
-    Route::post('guardar-evento', [EventoController::class, 'guardar'])->name('eventos.guardar');
-});
+// Route::middleware(['auth', 'EsFeriante'])->group(function() {
+//     Route::get('crear-evento', [EventoController::class, 'crear'])->name('eventos.crear');
+//     Route::post('guardar-evento', [EventoController::class, 'guardar'])->name('eventos.guardar');
+// });
 
 
 
-Route::get('formEvento', [EventoController::class, 'form'])->name('evento.form');
+// Route::get('formEvento', [EventoController::class, 'form'])->name('evento.form');
 Route::resource('usuario', UsuarioController::class);
 Route::resource('evento', EventoController::class);
 Route::resource('estand', EstandController::class);
