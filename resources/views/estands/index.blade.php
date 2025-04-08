@@ -28,6 +28,7 @@
         @endforeach
     </tbody>
 </table>
+{{$estands->links()}}
 
 <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4 shadow-lg" style="width: 350px;">

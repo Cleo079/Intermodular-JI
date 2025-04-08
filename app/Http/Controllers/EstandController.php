@@ -12,7 +12,7 @@ class EstandController extends Controller
      */
     public function index()
     {
-        $estands = Estand::all();
+        $estands = Estand::paginate(3);
 
        return view('estands.index', compact('estands'));
     }
