@@ -40,6 +40,10 @@ Route::get('/feriaregister', function () {
     return view('feria');
 });
 
+Route::get('/entradas', function () {
+    return view('entradas');
+});
+
 
 
 
