@@ -23,4 +23,9 @@ class Entrada extends Model
             'ID_USUARIO'          // Clave foránea en la tabla pivote
         )->withPivot('ID_USUARIO', 'ID_EVENTO'); // Incluir claves primarias compuestas
     }
+
+    public function evento()
+{
+    return $this->belongsTo(Evento::class, 'ID_EVENTO');
+}
 }
