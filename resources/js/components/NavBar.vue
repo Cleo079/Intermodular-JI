@@ -14,7 +14,7 @@
                 </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" :href="loginUrl">Login</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#">Pricing</a>
@@ -47,6 +47,9 @@ export default {
   computed: {
     landingUrl() {
         return 'http://localhost:80/Intermodular-JI/public/';
+    },
+    loginUrl(){
+        return 'http://localhost:80/Intermodular-JI/public/login';
     }
   }
 }
