@@ -18,9 +18,9 @@
                 <img src="{{ asset('imgs/iron_cross.png') }}" alt="Imagen del evento" width="200px" class="mb-3">
                 <p class="card-text">
                     <strong>Fecha:</strong> {{ $evento->FECHA }}<br>
-                    <strong>Hora:</strong> {{ $evento->HORA }}<br>
+                    <strong>Hora apertura:</strong> {{ $evento->HORA }}<br>
                     <strong>Lugar:</strong> {{ $evento->LUGAR }}<br>
-                    <strong>Aforo:</strong> {{ $evento->AFORO }}<br>
+                    <strong>Aforo:</strong> {{ $evento->AFORO }} <i>personas</i><br>
                     <strong>Estado:</strong> {{ ucfirst($evento->ESTADO) }}<br>
                     <strong>Ubicación:</strong> {{ $evento->UBICACION }}
                 </p>
