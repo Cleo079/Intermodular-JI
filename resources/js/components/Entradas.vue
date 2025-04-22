@@ -1,13 +1,29 @@
+<!-- App.vue -->
 <template>
-    <div>
 
+   <div class="product-display">
+    <div class="product-container">
+        <div class="product-image">
+            <!-- imagen -->
+        </div>
+        <div class="product-info">
+      {{ entradas }}
     </div>
-</template>
-<script>
-export default {
+    </div>
+   </div>
 
-}
-</script>
-<style>
+  </template>
 
-</style>
+  <script>
+  export default {
+    data() {
+      return {
+        entradas: 'Entradas'
+      }
+    }
+  }
+  </script>
+
+  <style scoped>
+  /* Puedes poner estilos aquí */
+  </style>
