@@ -6,6 +6,7 @@
     ---blackColor: #181818;
     ---baby1: url('../img/tiger.jpg');
     ---baby2: url('../img/IS-2.jpg');
+    ---baby3: url('../img/panzer.jpg');
 }
 
 
@@ -26,10 +27,15 @@ body {
 
 #registro{
     background: var(---baby1) no-repeat center/cover;
-    width: 950px;
-}   
+    width: auto;
+}
 
 #login{
     background: var(---baby2) no-repeat center/cover;
-    width: 950px;
+    width: auto;
+}
+
+#feria{
+    background: var(---baby3) no-repeat center/cover;
+    width: auto;
 }

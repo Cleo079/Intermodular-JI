@@ -17,7 +17,7 @@
                 <a class="nav-link" :href="loginUrl">Login</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" :href="feriaUrl">Crear Evento</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
@@ -50,6 +50,9 @@ export default {
     },
     loginUrl(){
         return 'http://localhost:80/Intermodular-JI/public/login';
+    },
+    feriaUrl(){
+        return 'http://localhost:80/Intermodular-JI/public/feriaregister';
     }
   }
 }

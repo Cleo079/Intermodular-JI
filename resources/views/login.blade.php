@@ -2,6 +2,7 @@
 @section('titulo', 'login')
 @section('contenido')
 
+<div id="login">
 <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4 shadow-lg" style="width: 350px;">
         <h3 class="text-center mb-4">Login</h3>
@@ -25,6 +26,7 @@
             @endif
         </form>
     </div>
+</div>
 </div>
 
 @endsection
