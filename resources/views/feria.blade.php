@@ -3,8 +3,9 @@
 @section('titulo', 'Crear_Feria')
 
 @section('contenido')
-<div>
-    <div class="d-flex justify-content-center align-items-center vh-100">
+<div id="feria">
+<div id="app">
+    {{-- <div class="d-flex justify-content-center align-items-center vh-100">
         <div class="card p-4 shadow-lg" style="width: 350px;">
             <h3 class="text-center mb-4">Feria</h3>
             <form action="" method="POST">
@@ -41,6 +42,8 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> --}}
+    <cevento></cevento>
+</div>
 </div>
 @endsection

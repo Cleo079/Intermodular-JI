@@ -3,7 +3,7 @@
 
 @section('contenido')
 <div id="app">
-    <registro></registro>
+    <div id="registro"><registro></registro></div>
 
 </div>
 {{-- <div class="d-flex justify-content-center align-items-center vh-100">
