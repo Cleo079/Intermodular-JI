@@ -13,23 +13,11 @@
                 @csrf
                 <button type="submit" class="btn btn-danger mt-2">Cerrar sesión</button>
             </form>
-            
+
         </div>
     @endauth
 </div>
-<div id="app">
-    <div id="contenedor">
-        <div id="registro">
-            <registro></registro>
-        </div>
-        <div id="login">
-            <login></login>
-        </div>
-    </div>
-    <div>
-        <cevento></cevento>
-    </div>
-</div>
+
 
 
 @endsection
