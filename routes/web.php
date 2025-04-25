@@ -44,6 +44,10 @@ Route::get('/entradas', function () {
     return view('entradas');
 });
 
+Route::get('/comentario', function () {
+    return view('comentario');
+});
+
 
 
 
