@@ -2,8 +2,13 @@
     ---purpleColor: #231738;
     ---blueColor: #9ED7F5;
     ---whiteColor: #FDFDFF;
-    ---pinkColor: #F57B88;
+    ---salmonColor: #F57B88;
+    ---pinkColor: #ff69b4;
     ---blackColor: #181818;
+    ---darkgreenColor: #1D361D;
+    ---greenColor: #3f873f;
+    ---oliveGreenColor: #7A9F24;
+    ---brownColor: #6C480F;
     ---baby1: url('../img/tiger.jpg');
     ---baby2: url('../img/IS-2.jpg');
     ---baby3: url('../img/panzer.jpg');
@@ -14,28 +19,48 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1a1a1a;
+    background-color: var(---greenColor);
     color: var(---blackColor);
 }
 
-#contenedor{
+.contenedor{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    background-color: var(---greenColor);
 }
 
 #registro{
     background: var(---baby1) no-repeat center/cover;
-    width: auto;
+    width: 100vh;
 }
 
 #login{
     background: var(---baby2) no-repeat center/cover;
-    width: auto;
+    width: 100vh;
 }
 
 #feria{
     background: var(---baby3) no-repeat center/cover;
     width: auto;
+}
+
+.text{
+    color: var(---purpleColor);
+    background-color: var(---greenColor);
+    font-size: 31px;
+    padding-left: 50px;
+}
+.green{
+    color: var(---greenColor);
+}
+.darkGreen{
+    color: var(---darkgreenColor);
+}
+.darkGreen:hover{
+    color: var(---greenColor);
+}
+::selection{
+    background-color: var(---oliveGreenColor);
 }
