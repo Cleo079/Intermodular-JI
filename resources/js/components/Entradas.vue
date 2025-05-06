@@ -1,5 +1,5 @@
 <template>
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
 
       <div class="row">
         <div
@@ -28,10 +28,10 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Entrada generada -->
-      <div v-if="entrada" class="mt-5">
+      <!-- <div v-if="entrada" class="mt-5">
         <div class="card border-success shadow-sm">
           <div class="card-header bg-success text-white">
             Entrada Generada
@@ -46,45 +46,45 @@
         </div>
       </div>
 
-    </div>
+    </div> -->
   </template>
 
   <script>
-  export default {
-    data() {
-      return {
-        eventos: [],
-        entrada: null,
-        idUsuario: 1, // Simulado, cámbialo cuando tengas auth
-      };
-    },
-    mounted() {
-      fetch("http://localhost/Intermodular-JI/public/api/evento")
-        .then((res) => res.json())
-        .then((data) => (this.eventos = data));
-    },
-    methods: {
-      comprarEntrada(idEvento) {
-        fetch("http://localhost/Intermodular-JI/public/api/entradas", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            ID_USUARIO: this.idUsuario,
-            ID_EVENTO: idEvento,
-          }),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            this.entrada = data.entrada;
-          });
-      },
-    },
-  };
+//   export default {
+//     data() {
+//       return {
+//         eventos: [],
+//         entrada: null,
+//         idUsuario: 1, // Simulado, cámbialo cuando tengas auth
+//       };
+//     },
+//     mounted() {
+//       fetch("http://localhost/Intermodular-JI/public/api/evento")
+//         .then((res) => res.json())
+//         .then((data) => (this.eventos = data));
+//     },
+//     methods: {
+//       comprarEntrada(idEvento) {
+//         fetch("http://localhost/Intermodular-JI/public/api/entradas", {
+//           method: "POST",
+//           headers: { "Content-Type": "application/json" },
+//           body: JSON.stringify({
+//             ID_USUARIO: this.idUsuario,
+//             ID_EVENTO: idEvento,
+//           }),
+//         })
+//           .then((res) => res.json())
+//           .then((data) => {
+//             this.entrada = data.entrada;
+//           });
+//       },
+//     },
+//   };
   </script>
 
   <style scoped>
-  .card-img-top {
+  /* .card-img-top {
     object-fit: cover;
     height: 150px;
-  }
+  } */
   </style>

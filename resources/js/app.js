@@ -16,7 +16,13 @@ import Entradas from './components/Entradas.vue';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const app = createApp({});
+const app = createApp({
+    data() {
+        return {
+            product: 'Entradas'
+        }
+    },
+});
 app.component('navbar', navBarVue);
 app.component('registro', Registrarse);
 app.component('cevento', CreaEventos);

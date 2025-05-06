@@ -3,11 +3,12 @@
 @section('contenido')
 
 <div id="app">
-    <div>
+    {{-- <div>
         <entradas>
-            
+
         </entradas>
-    </div>
+    </div> --}}
+    <h1>{{ product }}</h1>
 </div>
 
 @endsection
