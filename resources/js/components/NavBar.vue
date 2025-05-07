@@ -20,7 +20,7 @@
                 <a class="nav-link" :href="feriaUrl">Crear Evento</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" :href="entradasUrl">Entradas</a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
@@ -53,6 +53,9 @@ export default {
     },
     feriaUrl(){
         return 'http://localhost:80/Intermodular-JI/public/feriaregister';
+    },
+    entradasUrl(){
+        return 'http://localhost:80/Intermodular-JI/public/entradas';
     }
   }
 }
