@@ -13,7 +13,7 @@ class EventoController extends Evento
      */
     public function index()
     {
-        $eventos = Evento::paginate(3);
+        $eventos = Evento::paginate(6);
 
        return view('eventos.index', compact('eventos'));
     }
