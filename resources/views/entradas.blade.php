@@ -8,7 +8,7 @@
 
         </entradas>
     </div> --}}
-    <h1>{{ product }}</h1>
+    <entradas></entradas>
 </div>
 
 @endsection
