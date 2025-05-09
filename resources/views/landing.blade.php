@@ -6,8 +6,8 @@
 <div>
     <!-- Verificar si el usuario está autenticado -->
     @auth
-        <div>
-            <h3>Bienvenido, {{ Auth::user()->NOMBRE ?? Auth::user()->EMAIL }}!</h3>
+        <div class="user">
+            <h3 class="darkGreen">Bienvenido, {{ Auth::user()->NOMBRE ?? Auth::user()->EMAIL }}!</h3>
 
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
