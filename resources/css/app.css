@@ -9,6 +9,7 @@
     ---greenColor: #3f873f;
     ---oliveGreenColor: #7A9F24;
     ---brownColor: #6C480F;
+    ---lightbrownColor: #9f683e;
     ---baby1: url('../img/tiger.jpg');
     ---baby2: url('../img/IS-2.jpg');
     ---baby3: url('../img/panzer.jpg');
@@ -49,8 +50,7 @@ body {
 .text{
     color: var(---purpleColor);
     background-color: var(---greenColor);
-    animation-name: ccolor;
-    animation-duration: 5s;
+    animation: ccolor 4s infinite;
     font-size: 31px;
     padding-left: 50px;
 }
@@ -99,8 +99,10 @@ body {
 } */
 
 @keyframes ccolor{
-    0%   {background-color: red;}
-  25%  {background-color: yellow;}
-  50%  {background-color: blue;}
-  100% {background-color: green;}
+    0%   {background-color: var(---oliveGreenColor);}
+    25%  {background-color: var(---greenColor);}
+    50%  {background-color: var(---darkgreenColor);}
+    75%  {background-color: var(---lightbrownColor);}
+    90%  {background-color: var(---brownColor);}
+    100% {background-color: var(---oliveGreenColor);}
 }
