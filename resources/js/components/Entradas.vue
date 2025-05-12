@@ -58,7 +58,7 @@
         eventos: [],
         entrada: null,
         idUsuario: 1, // Simulado, cámbialo cuando tengas auth
-        stock: 100
+        stock: 0
       };
     },
     mounted() {
