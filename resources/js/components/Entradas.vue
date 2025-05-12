@@ -18,6 +18,9 @@
                 <strong>Fecha:</strong> {{ evento.FECHA }}<br />
                 <strong>Lugar:</strong> {{ evento.LUGAR }}
               </p>
+              <p v-if="stock > 10" class="card-text">Stock</p>
+              <p v-else-if="stock <= 10 && stock > 0" class="card-text">Poco Stock</p>
+              <p v-else="stock" class="card-text">No Stock</p>
               <button
                 class="btn btn-primary mt-auto"
                 @click="comprarEntrada(evento.ID_EVENTO)"
@@ -55,6 +58,7 @@
         eventos: [],
         entrada: null,
         idUsuario: 1, // Simulado, cámbialo cuando tengas auth
+        stock: 100
       };
     },
     mounted() {
