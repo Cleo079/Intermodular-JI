@@ -1,14 +1,13 @@
 @extends('layouts.principal')
-@section('titulo', 'entradas')
+@section('titulo', 'comentarios')
 @section('contenido')
 
 <div id="app">
-    {{-- <div>
+    <div>
         <entradas>
 
         </entradas>
-    </div> --}}
-    <entradas></entradas>
+    </div>
 </div>
 
 @endsection

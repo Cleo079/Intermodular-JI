@@ -2,40 +2,40 @@
     <div>
         <div class="d-flex justify-content-center align-items-center vh-100">
             <div class="card p-4 shadow-lg" style="width: 350px;">
-                <h3 class="text-center mb-4">Crear Evento</h3>
+                <h3 class="text-center mb-4 darkGreen">Crear Evento</h3>
                 <form @submit.prevent="crearEvento">
                     <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre</label>
+                        <label for="nombre" class="form-label green">Nombre</label>
                         <input type="text" class="form-control" id="nombre" v-model="evento.Nombre" placeholder="Introduzca nombre Evento">
                     </div>
 
                     <div class="mb-3">
-                        <label for="description" class="form-label">Descripcion</label>
+                        <label for="description" class="form-label green">Descripcion</label>
                         <textarea class="form-control" id="description" v-model="evento.Descripcion" placeholder="Introduzca descripcion"></textarea>
                     </div>
 
                     <div class="mb-3">
-                        <label for="fecha" class="form-label">Fecha</label>
+                        <label for="fecha" class="form-label green">Fecha</label>
                         <input type="date" class="form-control" id="fecha" v-model="evento.Fecha">
                     </div>
 
                     <div class="mb-3">
-                        <label for="hora" class="form-label">Hora</label>
+                        <label for="hora" class="form-label green">Hora</label>
                         <input type="time" class="form-control" id="hora" v-model="evento.Hora">
                     </div>
 
                     <div class="mb-3">
-                        <label for="lugar" class="form-label">Lugar</label>
+                        <label for="lugar" class="form-label green">Lugar</label>
                         <input type="text" class="form-control" id="lugar" v-model="evento.Lugar">
                     </div>
 
                     <div class="mb-3">
-                        <label for="aforo" class="form-label">Aforo</label>
+                        <label for="aforo" class="form-label green">Aforo</label>
                         <input type="number" class="form-control" id="aforo" v-model="evento.Aforo">
                     </div>
 
                     <div class="mb-3">
-                        <label for="estado" class="form-label">Estado</label>
+                        <label for="estado" class="form-label green">Estado</label>
                         <select class="form-select" id="estado" v-model="evento.Estado">
                             <option value="activa">Activa</option>
                             <option value="inactiva">Inactiva</option>
@@ -43,12 +43,12 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="ubicacion" class="form-label">Ubicacion</label>
+                        <label for="ubicacion" class="form-label green">Ubicacion</label>
                         <input type="text" class="form-control" id="ubicacion" v-model="evento.Ubicacion">
                     </div>
 
                     <div class="mb-3">
-                        <label for="id_organizador" class="form-label">Id_Organizador</label>
+                        <label for="id_organizador" class="form-label green">Id_Organizador</label>
                         <input type="number" class="form-control" id="id_organizador" v-model="evento.Id_Organizador">
                     </div>
 

@@ -27,7 +27,7 @@ Route::get('/', function () {
 
 Route::get('/registro', function () {
     return view('registro');
-});
+})->name("registro");
 Route::get('/usuario', function () {
     return view('usuarios.index');
 });
@@ -42,6 +42,10 @@ Route::get('/feriaregister', function () {
 
 Route::get('/entradas', function () {
     return view('entradas');
+});
+
+Route::get('/comentario', function () {
+    return view('comentario');
 });
 
 
