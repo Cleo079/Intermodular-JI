@@ -55,6 +55,7 @@
   export default {
     data() {
       return {
+        carrito: 0,
         eventos: [],
         entrada: null,
         idUsuario: 1, // Simulado, cámbialo cuando tengas auth
