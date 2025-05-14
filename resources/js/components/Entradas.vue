@@ -9,7 +9,7 @@
         >
           <div class="card h-100 shadow-sm">
             <img
-              src="../../img/d37d71157227099fc2e46ff70a09572d.jpg"
+              :src="imagen"
               class="card-img-top"
               alt="Imagen del evento"
             />
@@ -19,6 +19,7 @@
                 <strong>Fecha:</strong> {{ evento.FECHA }}<br />
                 <strong>Lugar:</strong> {{ evento.LUGAR }}
               </p>
+              <div v-for="variante in variante" :key="variante.id">{{ variante.color }}</div>
               <p v-if="stock > 10" class="card-text">Stock</p>
               <p v-else-if="stock <= 10 && stock > 0" class="card-text">Poco Stock</p>
               <p v-else="stock" class="card-text">No Stock</p>
@@ -58,10 +59,15 @@
     data() {
       return {
         carrito: 0,
+        imagen: "/imgs/evento_special.jpg",
         eventos: [],
         entrada: null,
         idUsuario: 1, // Simulado, cámbialo cuando tengas auth
-        stock: 0
+        stock: 0,
+        variante: [
+            {id: 1024, color: 'darkgreen'},
+            {id: 1025, color: 'brown'},
+        ]
       };
     },
     mounted() {
