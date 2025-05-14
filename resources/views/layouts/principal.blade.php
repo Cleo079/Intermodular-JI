@@ -14,18 +14,19 @@
         @yield('contenido')
         <pie></pie>
     </div>
+
     <script>
         window.routes = {
-
             usuarios: "{{ route('usuario.index') }}",
             eventos: "{{ route('evento.index') }}",
             estands: "{{ route('estand.index')}}"
-
-
         };
+
         window.assets = {
-        ironCross: "{{ asset('imgs/iron_cross.png') }}"
-    };
+            ironCross: "{{ asset('imgs/iron_cross.png') }}"
+        };
+
+        window.user = @json(Auth::user());
     </script>
 </body>
 </html>
