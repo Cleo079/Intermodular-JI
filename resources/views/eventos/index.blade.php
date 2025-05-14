@@ -37,9 +37,9 @@
                         <a href="#" class="btn btn-success float-start">
                             Valoraciones
                         </a>
-                        @if (auth()->user()->TIPO_USUARIO == 'feriante')
+                        @if (auth()->user()->TIPO_USUARIO == 'expositor')
                             <a href="#" class="btn btn-primary float-end">
-                                Crear evento
+                                Crear expositor
                             </a>
                             {{-- Cambia 'eventos.create' por la ruta real que lleva al formulario de creación --}}
                         @elseif (auth()->user()->TIPO_USUARIO == 'visitante')
