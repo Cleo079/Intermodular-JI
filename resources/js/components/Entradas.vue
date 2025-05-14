@@ -2,6 +2,7 @@
     <div class="container mt-5">
 
       <div class="row">
+        <p>Carrito({{ carrito }})</p>
         <div
           v-for="evento in eventos"
           :key="evento.ID_EVENTO"
@@ -23,7 +24,8 @@
               <p v-else="stock" class="card-text">No Stock</p>
               <button
                 class="btn btn-primary mt-auto"
-                @click="comprarEntrada(evento.ID_EVENTO)"
+                @click="anadirCarro(), comprarEntrada(evento.ID_EVENTO)"
+                :disabled="!stock"
               >
                 Comprar Entrada
               </button>
@@ -88,7 +90,10 @@
           .then((res) => res.json())
           .then((data) => {
             this.entrada = data.entrada;
-          });
+        });
+      },
+      anadirCarro() {
+        this.carrito += 1
       },
     },
   };
