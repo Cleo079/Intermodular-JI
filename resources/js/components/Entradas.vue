@@ -14,12 +14,16 @@
               alt="Imagen del evento"
             />
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title">{{ evento.NOMBRE }}</h5>
+              <h5 class="card-title">{{ titulo + ' ' + evento.NOMBRE }}</h5>
               <p class="card-text">
                 <strong>Fecha:</strong> {{ evento.FECHA }}<br />
                 <strong>Lugar:</strong> {{ evento.LUGAR }}
               </p>
-              <div v-for="variante in variante" :key="variante.id">{{ variante.color }}</div>
+              <div v-for="(variante, indice) in variante"
+              :key="variante.id"
+              @mouseover="updateVariante(indice)"
+              class="circulo"
+              :style="{ backgroundImage: variante.imagen}"></div>
               <p v-if="stock > 10" class="card-text">Stock</p>
               <p v-else-if="stock <= 10 && stock > 0" class="card-text">Poco Stock</p>
               <p v-else="stock" class="card-text">No Stock</p>
@@ -59,14 +63,14 @@
     data() {
       return {
         carrito: 0,
-        imagen: "/imgs/evento_special.jpg",
+        marca: 'Entradas para',
+        varianteSeleccionada: 0,
         eventos: [],
         entrada: null,
         idUsuario: 1, // Simulado, cámbialo cuando tengas auth
-        stock: 0,
         variante: [
-            {id: 1024, color: 'darkgreen'},
-            {id: 1025, color: 'brown'},
+            {id: 1024, color: 'darkgreen', imagen: '/imgs/IS-2.jpg', cantidad: 50},
+            {id: 1025, color: 'brown', imagen: '/imgs/evento_special.jpg', cantidad: 0},
         ]
       };
     },
@@ -101,7 +105,21 @@
       anadirCarro() {
         this.carrito += 1
       },
+      updateVariante(indice) {
+        this.varianteSeleccionada = indice
+      }
     },
+    computed: {
+        titulo() {
+            return this.marca
+        },
+        imagen() {
+            return this.variante[this.varianteSeleccionada].imagen
+        },
+        stock() {
+            return this.variante[this.varianteSeleccionada].cantidad
+        }
+    }
   };
   </script>
 
@@ -109,5 +127,12 @@
   .card-img-top {
     object-fit: cover;
     height: 150px;
+  }
+  .circulo {
+    width: 50px;
+    height: 50px;
+    margin-top: 8px;
+    border: 2px solid #d8d8d8;
+    border-radius: 50%;
   }
   </style>
