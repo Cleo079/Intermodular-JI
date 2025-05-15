@@ -32,6 +32,9 @@ Route::get('/usuario', function () {
     return view('usuarios.index');
 });
 
+Route::delete('/eventos/{evento}', [EventoController::class, 'destroy'])->name('eventos.destroy');
+
+
 Route::get('/login', function () {
     return view('login');
 })->name('showLogin');

@@ -37,36 +37,23 @@
                         <a href="#" class="btn btn-success float-start">
                             Valoraciones
                         </a>
+
                         @if (auth()->user()->TIPO_USUARIO == 'expositor')
                             <a href="#" class="btn btn-primary float-end">
                                 Crear expositor
                             </a>
-                            {{-- Cambia 'eventos.create' por la ruta real que lleva al formulario de creación --}}
                         @elseif (auth()->user()->TIPO_USUARIO == 'visitante')
                             <a href="#" class="btn btn-success float-end">
                                 Comprar entradas
                             </a>
-                            {{-- Cambia 'entradas.comprar' y el parámetro por tu ruta y lógica real de compra --}}
+                        @elseif (auth()->user()->TIPO_USUARIO == 'organizador')
+                            <form action="{{ route('eventos.destroy', $evento->ID_EVENTO) }}" method="POST"
+                                class="d-inline float-end form-borrar-evento">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-borrar">Borrar</button>
+                            </form>
                         @endif
-
-                        {{-- <div class="d-flex align-items-start col-8">
-                    <a href="#" class="btn btn-success">
-                        Valoraciones
-                    </a>
-                </div> --}}
-                        {{-- <div class="d-flex align-items-end col-4">
-                    @if (auth()->user()->TIPO_USUARIO == 'feriante')
-                        <a href="#" class="btn btn-primary">
-                            Crear evento
-                        </a> --}}
-                        {{-- Cambia 'eventos.create' por la ruta real que lleva al formulario de creación --}}
-                        {{-- @elseif (auth()->user()->TIPO_USUARIO == 'visitante')
-                        <a href="#" class="btn btn-success">
-                            Comprar entradas
-                        </a> --}}
-                        {{-- Cambia 'entradas.comprar' y el parámetro por tu ruta y lógica real de compra --}}
-                        {{-- @endif --}}
-                        {{-- </div> --}}
                     </div>
                 </div>
             </div>
@@ -75,28 +62,34 @@
     </div>
 @endsection
 
+@push('scripts')
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        // Seleccionamos todas las tarjetas de evento
+        // Extra: Imprimir datos en consola (debug)
         const cards = document.querySelectorAll(".card");
 
         cards.forEach((card, index) => {
             let datos = [];
 
-            // Nombre del evento (header)
             const nombre = card.querySelector(".card-header")?.textContent.trim();
             if (nombre) datos.push(`Nombre: ${nombre}`);
 
-            // Descripción del evento (card-title)
             const descripcion = card.querySelector(".card-title")?.textContent.trim();
             if (descripcion) datos.push(`Descripción: ${descripcion}`);
 
-            // Textos dentro del párrafo (card-text)
-            const detalles = card.querySelector(".card-text")?.innerText
-        .trim(); // innerText para conservar saltos
+            const detalles = card.querySelector(".card-text")?.innerText.trim();
             if (detalles) datos.push(`Detalles:\n${detalles}`);
 
             console.log(`Evento ${index + 1}:`, datos.join("\n"));
         });
+
+        // Ocultar el botón "Borrar" dinámicamente si el usuario no es organizador
+        const tipoUsuario = @json(auth()->user()->TIPO_USUARIO);
+        if (tipoUsuario !== 'organizador') {
+            document.querySelectorAll('.form-borrar-evento').forEach(form => {
+                form.style.display = 'none';
+            });
+        }
     });
 </script>
+@endpush
