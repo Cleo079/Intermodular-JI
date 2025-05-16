@@ -9,6 +9,7 @@
         </entradas>
     </div> --}}
     <entradas></entradas>
+    <most-entrada></most-entrada>
 </div>
 
 @endsection
