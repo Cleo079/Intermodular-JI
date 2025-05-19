@@ -48,6 +48,11 @@
                     </div>
 
                     <div class="mb-3">
+                        <label for="entradas" class="form-label green">Entradas</label>
+                        <input type="number" class="form-control" id="entradas" v-model="evento.Entradas">
+                    </div>
+
+                    <div class="mb-3">
                         <label for="id_organizador" class="form-label green">Id_Organizador</label>
                         <input type="number" class="form-control" id="id_organizador" v-model="evento.Id_Organizador">
                     </div>
@@ -77,6 +82,7 @@ export default {
                 Aforo: '',
                 Estado: '',
                 Ubicacion: '',
+                Entradas: '',
                 Id_Organizador: ''
             },
             mensaje: '',
