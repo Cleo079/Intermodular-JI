@@ -28,6 +28,10 @@
                 class="btn btn-primary mt-auto"
                 @click="anadirCarro(), comprarEntrada(evento.ID_EVENTO)"
                 :disabled="!stock">Comprar Entrada</button>
+                <br>
+                <button
+                class="btn btn-danger mt-auto"
+                @click="desanadirCarro()">Descomprar Entrada</button>
             </div>
           </div>
         </div>
@@ -94,6 +98,9 @@ data() {
       },
       anadirCarro() {
         this.$emit('anadir-carro', this.variante[this.varianteSeleccionada].id)
+      },
+      desanadirCarro(){
+        this.$emit('quitar-carro', this.variante[this.varianteSeleccionada].id);
       },
       updateVariante(indice) {
         this.varianteSeleccionada = indice
