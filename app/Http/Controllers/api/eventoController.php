@@ -37,6 +37,7 @@ class eventoController extends Controller
            $evento-> AFORO = $request->input('Aforo');
            $evento-> ESTADO = $request->input('Estado');
            $evento-> UBICACION = $request->input('Ubicacion');
+           $evento-> ENTRADAS = $request->input('Entradas');
            $evento-> ID_ORGANIZADOR = $request->input('Id_Organizador');
            $evento-> save();
 

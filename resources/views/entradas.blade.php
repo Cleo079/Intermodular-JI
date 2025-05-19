@@ -11,5 +11,5 @@
     <entradas></entradas>
     {{-- <most-entrada @anadir-carro="updateCarrito"></most-entrada> --}}
 </div>
-<script src="../js/entradas.js"></script>
+{{-- <script src="../js/entradas.js"></script> --}}
 @endsection

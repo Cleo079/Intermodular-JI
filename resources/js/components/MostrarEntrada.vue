@@ -13,7 +13,9 @@
               <h5 class="card-title">{{ titulo + ' ' + evento.NOMBRE }}</h5>
               <p class="card-text">
                 <strong>Fecha:</strong> {{ evento.FECHA }}<br />
-                <strong>Lugar:</strong> {{ evento.LUGAR }}
+                <strong>Lugar:</strong> {{ evento.LUGAR }}<br />
+                <strong>Aforo:</strong> {{ evento.AFORO }}<br />
+                <strong>Entradas:</strong> {{ evento.ENTRADAS }}<br />
               </p>
               <div v-for="(variante, indice) in variante"
               :key="variante.id"
