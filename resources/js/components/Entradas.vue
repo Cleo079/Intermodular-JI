@@ -2,8 +2,9 @@
     <div class="container mt-5">
 
       <div class="row">
-        <p>Carrito({{ carrito }})</p>
+        <p>Carrito({{ carrito.length }})</p>
 
+        <most-entrada @anadir-carro="updateCarrito"></most-entrada>
       </div>
 
     </div>
@@ -13,11 +14,13 @@
   export default {
     data() {//eliminar todo menos carrito
       return {
-        carrito: 0
+        carrito: []
       };
     },
     methods: {//dejar el apartado methods pero vacia
-
+        updateCarrito(id){
+            this.carrito.push(id)
+        }
     },
   };
   </script>
