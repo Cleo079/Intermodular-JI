@@ -4,28 +4,28 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Usuario;
+use App\Models\Evento;
 
 class Entrada extends Model
 {
     use HasFactory;
 
     protected $table = 'entrada';
-    public $incrementing = false; // Evita que Laravel asuma un ID autoincremental
-    public $timestamps = false;
+    public $incrementing = false; // Ya que usas clave compuesta
+    public $timestamps = false;   // No usas created_at ni updated_at
 
-    // Relación M:N con Usuario
-    public function usuarios()
+    protected $fillable = ['ID_USUARIO', 'ID_EVENTO', 'FECHA_ENTRADA'];
+
+    // Relación: esta entrada pertenece a un usuario
+    public function usuario()
     {
-        return $this->belongsToMany(
-            Usuario::class,       // Modelo relacionado
-            'entrada',    // Tabla pivote
-            'ID_EVENTO',          // Clave foránea en la tabla pivote
-            'ID_USUARIO'          // Clave foránea en la tabla pivote
-        )->withPivot('ID_USUARIO', 'ID_EVENTO'); // Incluir claves primarias compuestas
+        return $this->belongsTo(Usuario::class, 'ID_USUARIO');
     }
 
+    // Relación: esta entrada pertenece a un evento
     public function evento()
-{
-    return $this->belongsTo(Evento::class, 'ID_EVENTO');
-}
+    {
+        return $this->belongsTo(Evento::class, 'ID_EVENTO');
+    }
 }
