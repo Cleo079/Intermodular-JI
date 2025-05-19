@@ -9,7 +9,7 @@
         </entradas>
     </div> --}}
     <entradas></entradas>
-    <most-entrada></most-entrada>
+    {{-- <most-entrada @anadir-carro="updateCarrito"></most-entrada> --}}
 </div>
-
+<script src="../js/entradas.js"></script>
 @endsection

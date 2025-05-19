@@ -91,7 +91,7 @@ data() {
         });
       },
       anadirCarro() {
-        this.carrito += 1
+        this.$emit('anadir-carro', this.variante[this.varianteSeleccionada].id)
       },
       updateVariante(indice) {
         this.varianteSeleccionada = indice
