@@ -34,9 +34,10 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-success float-start">
-                            Valoraciones
+                        <a href="{{ route('valoraciones.create', $evento->ID_EVENTO) }}" class="btn btn-success float-start">
+                             Valoraciones
                         </a>
+
 
                         @if (auth()->user()->TIPO_USUARIO == 'expositor')
                             <a href="#" class="btn btn-primary float-end">
@@ -83,9 +84,9 @@
             console.log(`Evento ${index + 1}:`, datos.join("\n"));
         });
 
-        // Ocultar el botón "Borrar" dinámicamente si el usuario no es organizador
+        // Mostrar botón "Borrar" solo si el usuario es organizador o feriante
         const tipoUsuario = @json(auth()->user()->TIPO_USUARIO);
-        if (tipoUsuario !== 'organizador') {
+        if (tipoUsuario !== 'feriante' && tipoUsuario !== 'feriante') {
             document.querySelectorAll('.form-borrar-evento').forEach(form => {
                 form.style.display = 'none';
             });
@@ -93,3 +94,4 @@
     });
 </script>
 @endpush
+

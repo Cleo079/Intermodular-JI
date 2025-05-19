@@ -16,17 +16,27 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($estands as $estand)
-        <tr class="table-info">
-            <td>{{ $estand->NOMBRE_EMPRESA }}</td>
-            <td>{{ $estand->CONTACTO }}</td>
-            <td>{{ $estand->EMAIL }}</td>
-            <td>{{ $estand->TELEFONO }}</td>
-            <td>{{ $estand->UBICACION }}</td>
-            <td>{{ $estand->ID_USUARIO }}</td>
-        </tr>
-        @endforeach
-    </tbody>
+    @foreach ($estands as $estand)
+    <tr class="table-info">
+        <td>{{ $estand->NOMBRE_EMPRESA }}</td>
+        <td>{{ $estand->CONTACTO }}</td>
+        <td>{{ $estand->EMAIL }}</td>
+        <td>{{ $estand->TELEFONO }}</td>
+        <td>{{ $estand->UBICACION }}</td>
+        <td>{{ $estand->ID_USUARIO }}</td>
+        <td>
+            @if (auth()->user()->TIPO_USUARIO === 'organizador' || auth()->user()->TIPO_USUARIO === 'feriante')
+                <form action="{{ route('estand.destroy', $estand->ID_ESTAND) }}" method="POST" class="form-borrar-estand d-inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
+                </form>
+            @endif
+        </td>
+    </tr>
+    @endforeach
+</tbody>
+
 </table>
 {{$estands->links()}}
 
@@ -79,3 +89,16 @@
 </div>
 
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const tipoUsuario = @json(auth()->user()->TIPO_USUARIO);
+        if (tipoUsuario !== 'organizador' && tipoUsuario !== 'feriante') {
+            document.querySelectorAll('.form-borrar-estand').forEach(form => {
+                form.style.display = 'none';
+            });
+        }
+    });
+</script>
+@endpush

@@ -72,8 +72,13 @@ class EstandController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Estand $estand)
-    {
-        //
-    }
+    
+
+public function destroy(Estand $estand)
+{
+    $estand->delete();
+
+    return redirect()->route('estand.index')->with('success', 'Estand eliminado correctamente.');
+}
+
 }

@@ -62,10 +62,17 @@ class UsuarioController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Usuario $usuario)
-    {
-        //
+   public function destroy(Usuario $usuario)
+{
+    // Prevenir que un organizador se elimine a sí mismo
+    if (auth()->user()->ID_USUARIO == $usuario->ID_USUARIO) {
+        return redirect()->route('usuario.index')->with('error', 'No puedes borrarte a ti mismo.');
     }
+
+    $usuario->delete();
+
+    return redirect()->route('usuario.index')->with('success', 'Usuario eliminado correctamente.');
+}
 
     public function login(Request $request){
         $username = $request->input('email');
