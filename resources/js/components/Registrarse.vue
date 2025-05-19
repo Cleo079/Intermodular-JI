@@ -58,18 +58,21 @@ export default {
         };
     },
     methods: {
-        async registrarUsuario() {
-            this.mensaje = '';
-            this.error = '';
-            try {
-                const response = await axios.post('http://localhost/Intermodular-JI/public/api/usuario', this.usuario);
-                this.mensaje = response.data.message;
-                this.usuario = { Nombre: '', Email: '', Contrasenya: '', Tipo: 'visitante' };
-            } catch (error) {
-                this.error = error.response?.data?.error || 'Error al registrar usuario';
-            }
-        }
-    }
+  registrarUsuario() {
+    this.mensaje = '';
+    this.error = '';
+
+    axios.post('http://localhost/Intermodular-JI/public/api/usuario', this.usuario)
+      .then(response => {
+        this.mensaje = response.data.message;
+        
+        this.usuario = { Nombre: '', Email: '', Contrasenya: '', Tipo: 'visitante' };
+      })
+      .catch(error => {
+        this.error = error.response?.data?.error || 'Error al registrar usuario';
+      });
+  }
+}
 };
 </script>
 

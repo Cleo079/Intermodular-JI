@@ -89,19 +89,32 @@ export default {
             error: ''
         };
     },
-    methods:{
-        async crearEvento() {
-            this.mensaje = '';
-            this.error = '';
-            try{
-                const response = await axios.post('http://localhost/Intermodular-JI/public/api/evento', this.evento);
-                this.mensaje = response.data.message;
-                this.evento = {Nombre: '', Descripcion: '', Fecha: '', Hora: '', Lugar: '', Aforo: '', Estado: '', Ubicacion: '', Id_Organizador: ''};
-            }catch(error){
-                this.error = error.response?.data?.error || 'Error al crear evento';
-            }
-        }
-    }
+   methods: {
+  crearEvento() {
+    this.mensaje = '';
+    this.error = '';
+
+    axios.post('http://localhost/Intermodular-JI/public/api/evento', this.evento)
+      .then(response => {
+        this.mensaje = response.data.message;
+        this.evento = {
+          Nombre: '',
+          Descripcion: '',
+          Fecha: '',
+          Hora: '',
+          Lugar: '',
+          Aforo: '',
+          Estado: '',
+          Ubicacion: '',
+          Id_Organizador: ''
+        };
+      })
+      .catch(error => {
+        this.error = error.response?.data?.error || 'Error al crear evento';
+      });
+  }
+}
+
 };
 </script>
 <style>
