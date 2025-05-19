@@ -4,7 +4,7 @@
       <div class="row">
         <p>Carrito({{ carrito.length }})</p>
 
-        <most-entrada @anadir-carro="updateCarrito"></most-entrada>
+        <most-entrada @anadir-carro="updateCarrito" @quitar-carro="removeCarrito"></most-entrada>
       </div>
 
     </div>
@@ -20,7 +20,13 @@
     methods: {//dejar el apartado methods pero vacia
         updateCarrito(id){
             this.carrito.push(id)
-        }
+        },
+        removeCarrito(id) {
+    const index = this.carrito.lastIndexOf(id);
+    if (index !== -1) {
+      this.carrito.splice(index, 1);
+    }
+  }
     },
   };
   </script>
