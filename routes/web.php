@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstandController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\ValoracionController;
 use App\Models\EventoApp\Http\Middleware\EsFeriante;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ComentarioController;
@@ -50,6 +51,7 @@ Route::get('/entradas', function () {
 Route::get('/comentario', function () {
     return view('comentario');
 });
+Route::get('/valoraciones', [ComentarioController::class, 'index'])->name('valoraciones.index');
 
 Route::get('/valoraciones/{id_evento}', [ComentarioController::class, 'create'])->name('valoraciones.create');
 
