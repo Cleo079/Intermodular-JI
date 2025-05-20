@@ -14,6 +14,9 @@ class ComentarioController extends Controller
     public function index()
     {
         //
+        $comentarios = Comentario::paginate(4);
+
+       return view('valoraciones.index', compact('comentarios'));
     }
 
     /**

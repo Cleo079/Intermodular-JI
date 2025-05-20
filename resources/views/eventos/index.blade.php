@@ -37,7 +37,7 @@
                         <a href="{{ route('valoraciones.create', $evento->ID_EVENTO) }}" class="btn btn-success float-start">
                              Valoraciones
                         </a>
-                        <a href="" class="btn btn-success margen">Ver Valoraciones</a>
+                        <a href="{{ route('valoraciones.index')}}" class="btn btn-success margen">Ver Valoraciones</a>
 
 
                         @if (auth()->user()->TIPO_USUARIO == 'expositor')
