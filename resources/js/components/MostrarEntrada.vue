@@ -25,13 +25,13 @@
               <p v-else-if="stock <= 10 && stock > 0" class="card-text">Poco Stock</p>
               <p v-else="stock" class="card-text">No Stock</p>
               <button
-                class="btn btn-primary mt-auto"
+                class="btn btn-primary mt-auto botonCompra"
                 @click="anadirCarro(), comprarEntrada(evento.ID_EVENTO)"
-                :disabled="!stock">Comprar Entrada</button>
+                :disabled="!stock">+</button>
                 <br>
                 <button
-                class="btn btn-danger mt-auto"
-                @click="desanadirCarro()">Descomprar Entrada</button>
+                class="btn btn-danger mt-auto botonCompra"
+                @click="desanadirCarro()">-</button>
             </div>
           </div>
         </div>
