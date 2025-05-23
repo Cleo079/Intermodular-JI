@@ -63,7 +63,7 @@ data() {
         entrada: null,
         idUsuario: 1, // Simulado, cámbialo cuando tengas auth
         variante: [
-            {id: 1024, text: 'Entrada Estandard', imagen: '../public/imgs/IS-2.jpg', cantidad: 50},
+            {id: 1024, text: 'Entrada Estandard', imagen: '../public/imgs/IS-2.webp', cantidad: 50},
             {id: 1025, text: 'Entrada Evento', imagen: '../public/imgs/evento_special.jpg', cantidad: 0},
         ]
       };
