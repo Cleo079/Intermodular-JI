@@ -11,7 +11,7 @@ class MiElemento extends HTMLElement{
                     color: blue;
                 }
             </style>
-            <img src="../img/tiger.avif" alt="" width="140xp">
+            <img src="../../img/tiger.avif" alt="Tiger Image" width="140xp">
             <p>elemento normal</p>
         `;
 
