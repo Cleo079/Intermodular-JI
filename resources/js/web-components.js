@@ -1,7 +1,7 @@
 class MiElemento extends HTMLElement{
     constructor(){
         super();
-        
+
         this.attachShadow({mode: 'open'});
 
         const plantilla = document.createElement('plantilla');
@@ -11,7 +11,7 @@ class MiElemento extends HTMLElement{
                     color: blue;
                 }
             </style>
-            <img src="../../img/tiger.avif" alt="Tiger Image" width="140xp">
+            <img src="../img/tiger.avif" alt="Tiger Image" width="140xp">
             <p>elemento normal</p>
         `;
 

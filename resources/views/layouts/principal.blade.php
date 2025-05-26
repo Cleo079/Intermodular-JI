@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="{{ asset('imgs/iron_cross.png')}}" type="image/x-icon">
     <title>@yield('titulo')</title>
-    @vite(['resources/css/app.css', 'resources/css/app.scss','resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/app.scss','resources/js/app.js', 'resources/js/web-components.js'])
 </head>
 <body>
     <div id="app">
