@@ -36,7 +36,7 @@
                 <a class="dropdown-item" v-if="esOrganizador" :href="routes.usuarios">Usuarios</a>
 
                 <!-- Eventos para todos -->
-                <a class="dropdown-item" :href="routes.eventos">Eventos</a>
+                <a class="dropdown-item" :href="entradasRecuUrl">Eventos</a>
 
                 <!-- Estands solo si NO es visitante -->
                 <a class="dropdown-item" v-if="!esVisitante" :href="routes.estands">Estands</a>
@@ -70,6 +70,9 @@ export default {
     },
     entradasUrl() {
       return 'http://localhost:80/Intermodular-JI/public/entradas';
+    },
+    entradasRecuUrl() {
+      return 'http://localhost:80/Intermodular-JI/public/entradasRecu';
     },
     tipoUsuario() {
       return this.user?.TIPO_USUARIO?.toLowerCase();

@@ -11,18 +11,18 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Nombre del Evento</th>
+                                        <th>Nombre</th>
                                         <th class="text-end">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr v-for="evento in eventos" :key="evento.ID_EVENTO">
                                         <td>{{ evento.NOMBRE }}</td>
-                                        
                                         <td class="text-end">
-                                            <button class="btn btn-success" @click="comprarEntrada(evento.ID_EVENTO)">
-                                                Comprar Entradas
-                                            </button>
+                                            <comprar-entradas 
+                                                :evento-id="evento.ID_EVENTO"
+                                                @compra-realizada="eventoComprado"
+                                            />
                                         </td>
                                     </tr>
                                     <tr v-if="eventos.length === 0">
@@ -40,8 +40,12 @@
 
 <script>
 import axios from 'axios';
+import ComprarEntradas from './comprarEntradas.vue';
 
 export default {
+    components: {
+        'comprar-entradas': ComprarEntradas
+    },
     data() {
         return {
             eventos: []
@@ -51,15 +55,11 @@ export default {
         axios.get('eventoApi')
             .then(response => {
                 this.eventos = response.data;
-            })
-            .catch(error => {
-                console.log('Error:', error);
             });
     },
     methods: {
-        comprarEntrada(idEvento) {
-            // Aquí puedes implementar la lógica de compra
-            console.log('Comprando entrada para el evento:', idEvento);
+        eventoComprado() {
+            alert('¡Compra realizada con éxito!');
         }
     }
 }

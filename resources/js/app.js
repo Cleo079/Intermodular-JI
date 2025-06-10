@@ -8,14 +8,13 @@ import navBarVue from './components/NavBar.vue';
 import FooterVue from './components/footerV.vue';
 import Registrarse from './components/Registrarse.vue';
 import Eventos from './components/entradasVue/Eventos.vue';
-
+import MisEntradas from './components/entradasVue/MisEntradas.vue';
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import CreaEventos from './components/CreaEventos.vue';
 import Entradas from './components/Entradas.vue';
 import MostrarEntrada from './components/MostrarEntrada.vue';
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,6 +27,7 @@ app.component('entradas', Entradas);
 app.component('most-entrada', MostrarEntrada);
 app.component('pie', FooterVue);
 app.component('eventos', Eventos);
+app.component('mis-entradas', MisEntradas);
 app.mount('#app');
 
 gsap.registerPlugin(ScrollTrigger);

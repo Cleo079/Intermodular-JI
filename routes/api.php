@@ -7,6 +7,7 @@ use App\Http\Controllers\api\usuarioController;
 use App\Http\Controllers\api\eventoApi;
 use App\Http\Controllers\api\entradaApi;
 use App\Http\Controllers\api\eventoControllerApi;
+use App\Http\Controllers\api\EntradasControllerApi;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,9 @@ use App\Http\Controllers\api\eventoControllerApi;
 Route::apiResource('usuario',usuarioController::class);
 
 Route::post('usuario/login', [usuarioController::class, 'login']);
+
+Route::get('entradasApi', [EntradasControllerApi::class, 'index']);
+Route::post('entradasApi', [EntradasControllerApi::class, 'store']);
 
 // Route::apiResource('evento', eventoApi::class);
 // Route::apiResource('entradas', entradaApi::class);

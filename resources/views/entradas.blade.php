@@ -1,15 +1,9 @@
 @extends('layouts.principal')
-@section('titulo', 'entradas')
+@section('titulo', 'Mis Entradas')
 @section('contenido')
 
 <div id="app">
-    {{-- <div>
-        <entradas>
-
-        </entradas>
-    </div> --}}
-    <entradas></entradas>
-    {{-- <most-entrada @anadir-carro="updateCarrito"></most-entrada> --}}
+    <mis-entradas></mis-entradas>
 </div>
-{{-- <script src="../js/entradas.js"></script> --}}
+
 @endsection

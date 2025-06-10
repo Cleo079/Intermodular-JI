@@ -16,12 +16,7 @@ class Evento extends Model
     // Relación M:N con Entrada
     public function entradas()
     {
-        return $this->belongsToMany(
-            Entrada::class,
-            'entrada_usuario',
-            'ID_EVENTO',
-            'ID_USUARIO'
-        )->withPivot('ID_USUARIO', 'ID_EVENTO');
+        return $this->hasMany(Entrada::class, 'ID_EVENTO');
     }
 
     // Relación M:N con Comentario
