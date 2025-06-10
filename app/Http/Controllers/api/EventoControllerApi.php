@@ -13,7 +13,8 @@ class EventoControllerApi extends Controller
      */
     public function index()
     {
-        return Evento::all();
+        // return Evento::all();
+        return Evento::select('ID_EVENTO', 'NOMBRE')->get();
     }
 
     /**
