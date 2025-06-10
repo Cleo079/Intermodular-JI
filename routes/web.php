@@ -48,6 +48,10 @@ Route::get('/entradas', function () {
     return view('entradas');
 });
 
+Route::get('/entradasRecu', function () {
+    return view('entradasViews.entradasRecu');
+})->name('entradasRecu');
+
 Route::get('/comentario', function () {
     return view('comentario');
 });

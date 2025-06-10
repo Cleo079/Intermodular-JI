@@ -6,6 +6,7 @@ use App\Http\Controllers\api\eventoController;
 use App\Http\Controllers\api\usuarioController;
 use App\Http\Controllers\api\eventoApi;
 use App\Http\Controllers\api\entradaApi;
+use App\Http\Controllers\api\eventoControllerApi;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,6 @@ Route::post('usuario/login', [usuarioController::class, 'login']);
 
 
 Route::apiResource('evento', eventoController::class);
+
+Route::apiResource('eventoApi', eventoControllerApi::class);
 

@@ -7,6 +7,8 @@ import { createApp } from 'vue';
 import navBarVue from './components/NavBar.vue';
 import FooterVue from './components/footerV.vue';
 import Registrarse from './components/Registrarse.vue';
+import Eventos from './components/entradasVue/Eventos.vue';
+
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -18,12 +20,14 @@ import MostrarEntrada from './components/MostrarEntrada.vue';
 gsap.registerPlugin(ScrollTrigger);
 
 const app = createApp({});
+
 app.component('navbar', navBarVue);
 app.component('registro', Registrarse);
 app.component('cevento', CreaEventos);
 app.component('entradas', Entradas);
 app.component('most-entrada', MostrarEntrada);
 app.component('pie', FooterVue);
+app.component('eventos', Eventos);
 app.mount('#app');
 
 gsap.registerPlugin(ScrollTrigger);
